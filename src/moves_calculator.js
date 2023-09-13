@@ -1,7 +1,5 @@
-export function tower_move(piece_data, board){
+export function tower_move(piece_data, board, possible_moves){
     
-    let possible_moves = new Array;
-
     const x = piece_data.id.charAt(0);
     const y = piece_data.id.charAt(1);
     

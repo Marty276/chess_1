@@ -26,7 +26,7 @@ export const default_positions = {
 };
 
 export function change_box_class(box_class_name, new_class){
-    return box_class_name.substring(0, 4) + new_class;
+    return box_class_name.substring(0, 4) + new_class + box_class_name.substring(6, 10);
 }
 
 export function detect_click_target(e){
@@ -38,6 +38,20 @@ export function detect_click_target(e){
 
     return {
         "id" : id,
-        "piece" : className.substring(4, 7),
+        "piece" : className.substring(4, 6),
     };
+}
+
+export function paint_possible_moves_in_board(possible_moves){
+    for (let i = 0; i < possible_moves.length; i++){
+        let box_class_name = document.getElementById(possible_moves[i]).className;
+        document.getElementById(possible_moves[i]).className = box_class_name.substring(0, 7) + "onn";
+    }
+}
+
+export function clear_possible_moves_in_board(possible_moves){
+    for (let i = 0; i < possible_moves.length; i++){
+        let box_class_name = document.getElementById(possible_moves[i]).className;
+        document.getElementById(possible_moves[i]).className = box_class_name.substring(0, 7) + "off";
+    }
 }

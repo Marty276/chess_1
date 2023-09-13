@@ -4,7 +4,9 @@ import {
     empty_board,
     default_positions,
     change_box_class,
-    detect_click_target
+    detect_click_target,
+    clear_possible_moves_in_board,
+    paint_possible_moves_in_board
 } from "./tools";
 import { tower_move } from "./moves_calculator"
 
@@ -39,7 +41,8 @@ export const Game = () => {
             if (moving_piece === null && box_clicked["piece"] !== "EM"){
                 
                 moving_piece = box_clicked;
-                possible_moves = tower_move(moving_piece, board);
+                possible_moves = tower_move(moving_piece, board, possible_moves);
+                paint_possible_moves_in_board(possible_moves);
 
             }else if (moving_piece !== null){
 
@@ -49,7 +52,8 @@ export const Game = () => {
                 }
 
                 moving_piece = null;
-
+                clear_possible_moves_in_board(possible_moves);
+                possible_moves = [];
             }
         }
     }

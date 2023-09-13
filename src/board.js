@@ -16,7 +16,7 @@ export const Board = () => {
                                             x % 2 !== 0 ? "bsq"
                                             : "wsq"
                                             : x % 2 !== 0 ? "wsq"
-                                            : "bsq") + " EM")}>
+                                            : "bsq") + " EM" + " off")}>
                                         </div>
                                 })
                         }

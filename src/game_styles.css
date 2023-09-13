@@ -76,3 +76,6 @@
 .WP{
     background-image: url("../public/assets/pieces/w_pawn.svg");
 }
+.onn{
+    box-shadow: inset 0 0 0px 7px #516b9670;
+}
